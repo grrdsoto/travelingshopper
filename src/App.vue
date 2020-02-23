@@ -7,10 +7,10 @@
     >
       <div class="d-flex align-center">
         <v-img
-          alt="Vuetify Logo"
+          alt=""
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src=""
           transition="scale-transition"
           width="40"
         />
@@ -27,34 +27,36 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
+      <ProductCard/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
-export default {
+// import HelloWorld from './components/HelloWorld';
+import ProductCard from './components/ProductCard';
+import axios from 'axios';
+export default { 
+  methods: {
+      mounted: function(){
+        fetch("http://localhost:3000/products")
+        .then((response) => {
+          this.data = response.json()
+        }).then((product) => {
+            console.log(product)
+            
+        })
+      }
+    },
   name: 'App',
 
   components: {
-    HelloWorld,
-  },
+    data: () => ({
 
-  data: () => ({
-    //
-  }),
-};
+    })
+  },
 </script>
