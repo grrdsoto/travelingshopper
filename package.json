@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "moment": "^2.24.0",
+    "serve": "^11.3.0",
     "vue": "^2.6.11",
     "vuetify": "^2.2.11"
   },
