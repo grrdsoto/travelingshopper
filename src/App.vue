@@ -66,7 +66,7 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld';
+import HelloWorld from './components/HelloWorld';
 import ProductCard from './components/ProductCard';
 import axios from 'axios';
 export default {
@@ -84,8 +84,12 @@ export default {
   name: 'App',
 
   components: {
+    HelloWorld,
+    ProductCard,
+    axios,
   data: () => ({
     drawer: null,
   }),
-};
+},
+}
 </script>
