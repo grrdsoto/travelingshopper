@@ -12,6 +12,7 @@
       <v-switch v-model="singleSelect" label="Single select" class="pa-3"></v-switch>
     </template>
   </v-data-table>
+  <div> </div>
 </template>
 <script>
   export default {
@@ -116,5 +117,13 @@
         ],
       }
     },
+    methods: {
+
+    },
+    name: 'HelloWorld',
+
+    data: () => ({
+
+    }),
   }
 </script>
