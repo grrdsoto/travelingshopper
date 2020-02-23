@@ -31,19 +31,23 @@
     </v-app-bar>
 
     <v-content>
-      <ProductCard/>
+      <ProductCards/>
     </v-content>
   </v-app>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld';
-import ProductCard from './components/ProductCard';
-import axios from 'axios';
+import ProductCards from './components/ProductCards';
+// import axios from 'axios';
 export default { 
   methods: {
       mounted: function(){
-        fetch("http://localhost:3000/products")
+        var headers = {
+          "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ilo0RmQzbXNrSUg4OGlydDdMQjVjNmc9PSIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6InByb2R1Y3QuY29tcGFjdCIsImF1dGhBdCI6MTU4MjQ1MDQ1MDI0NzQxNzMyMCwiYXVkIjoidHJhdmVsaW5nc2hvcHBlci0wZGJhMTkzN2NkMDk3YjM0YjVjZDNiZjY5ZWRiOWVlMjkyMDI3NzM3MDcyODI4NjE0OTkiLCJleHAiOjE1ODI0NTIyNTAsImlhdCI6MTU4MjQ1MDQ0NSwiaXNzIjoiYXBpLmtyb2dlci5jb20iLCJzdWIiOiJmYTMxOGFkOC04MGEwLTRjZjgtOGVhMS0xZWRmNzlmMWYzOWMifQ.X-tFTtSlhgp3dR7rDlDsBt-ldg3PuwpfTj8oJjRZdu6yS_FZCyDZkFe6C2eEVv-3Adu34iJuqkWFag9GxU2wWkaadRYveDGZQ56pbtknnh1lbRNj7qUzH-L--qcPfJ4jM_JF_8SnBiv0KpoGHUqW-59pjl4dXAwtvjqEME_XwQebAHtF0eSVGzvPrB0o9K2niqNr89npViar7BRGVMWeJtOHSouodR4L3uNw_3sWRxNvHrl0yA6dV6LA7hqMEHuz5bt9LKdSQi94fmj9PKhmOMjD_zXdB4l-CQ3XTbRmVJQJnAA26S08_UZ5JcwXQfqfveTSlk1cnV3WHPKnawZbKg"
+        }
+        console.log(headers)
+        fetch("http://localhost:3000/products", {method: "GET", headers: headers, mode: "no-cors"})
         .then((response) => {
           this.data = response.json()
         }).then((product) => {
@@ -55,8 +59,7 @@ export default {
   name: 'App',
 
   components: {
-    data: () => ({
-
-    })
+    ProductCards
   },
+}
 </script>
