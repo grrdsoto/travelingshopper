@@ -12,7 +12,7 @@
     "core-js": "^3.6.4",
     "express": "^4.17.1",
     "jso": "^4.1.1",
-    "json": "^9.0.6",
+    "json": "^10.0.0",
     "postman-request": "^2.88.1-postman.18",
     "vue": "^2.6.11",
     "vuetify": "^2.2.11"
